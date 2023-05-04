@@ -1,1 +1,4 @@
-console.log("Hello 22")
+let string = ["code"];
+for (let i in string) {
+  console.log(string[i]);
+}
