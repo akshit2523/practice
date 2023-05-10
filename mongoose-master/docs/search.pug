@@ -1,0 +1,36 @@
+extends layout
+
+append style
+  style.
+    .title {
+      font-size: 1.5em;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+
+    .url a {
+      font-size: 0.75em;
+      color: #777;
+      margin-top: 0.5em;
+    }
+
+    p {
+      margin-top: 0.5em;
+    }
+
+block content
+  div
+    h1 Search
+
+    include includes/native
+
+    div.search
+      input#search-input(type="text", placeholder="Search")
+      button#search-button
+        img(src=`${versions.versionedPath}/docs/images/search.svg`)
+    div#results
+
+    script(type="text/javascript" src=`${versions.versionedPath}/docs/js/search.js`)
