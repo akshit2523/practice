@@ -14,7 +14,7 @@ const Movie = mongoose.model('Movies', new mongoose.Schema({
         type: genreSchema,
         require: true,
     },
-    numberinStock : {
+    numberInStock : {
         type: Number,
         required: true,
         minlength: 0,

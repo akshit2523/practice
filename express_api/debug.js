@@ -9,7 +9,7 @@ if(app.get('env') === 'development'){
     startupDebugger('Morgan enabled...');
 };
   
-//DB worl...
+//DB world...
 dbDebugger('Connected to the database...');
 
 const port = process.env.PORT || 3000;

@@ -46,9 +46,9 @@ async function listCourses(){
     console.log(courses);
 
 };
-//createAuthor('Mosh','My Bio','My Website');
+createAuthor('Mosh','My Bio','My Website');
 
-//createCourse('Node Course','646dd10458bb1c27e88a2359');
+createCourse('Node Course','646dd10458bb1c27e88a2359');
 
 listCourses();
 

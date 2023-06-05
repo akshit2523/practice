@@ -1,0 +1,35 @@
+customers = done;
+
+get : done;
+post : done;
+put :  done;
+delete : done;
+get(one) : done;
+
+
+genres = done;
+
+get : done;
+post : done;
+put :  done;
+delete : done;
+get(one) : done;
+
+
+movies = done;
+
+get : done;
+post : done;
+put : done;
+delete : done;
+get(one) : done;
+
+
+rentals =
+
+get : done;
+post : done;
+get(one) : done;
+
+
+

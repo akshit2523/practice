@@ -34,7 +34,11 @@ router.put('/:id',async(req,res) => {
     const {error} = validate(req.body);
     if(error) return res.status(400).send(error.details[0].message)
     
-    const genre = await Genre.finByIdAndUpdate(req.params.id,
+    const genre = await Genre.findById(req.body.genreId);
+    if(!genre) return res.status(400).send('Invalid genre.');
+
+      
+    const movie = await Movie.findByIdAndUpdate(req.params.id,
         {
             title: req.body.title,
             genre: {
@@ -45,26 +49,23 @@ router.put('/:id',async(req,res) => {
             dailyRentalRate: req.body.dailyRentalRate
         },{ new: true });
 
-    if(!genre) res.status(404).send('The genre is not found in the code');
+    if(!movie) res.status(404).send('The movie is not found in the code');
 
-    res.send(genre);
+    res.send(movie);
 
 });
 
 router.delete('/:id',async(req,res) => {
-    const genre = await Genre.findByIdAndRemove(req.params.id);
+    const genre = await Movie.findByIdAndRemove(req.params.id);
     if(!genre) res.status(404).send('The genre is not found in the code');
 
     res.send(genre);
 });
 
 router.get ('/:id',async (req,res) => {
-    const genre = await Genre.findById(req.params.id);
+    const genre = await Movie.findById(req.params.id);
     if(!genre) res.status(404).send('the genre is not found in the code');
     res.send(genre);
-    if(res.headersSent !== true) {
-        res.send(genre);
-    }
 });
 
 module.exports = router;
